@@ -4,30 +4,34 @@
 
     <div class="row-12">
 
-      <h1>{{ msg }}</h1>
+      <!-- <h1>{{ msg }}</h1> -->
 
-      <table class="table mt-3" :items="postres" :fields="fields">
-      <thead class="thead-dark">
-        <tr>
-          <th scope="col">Nombre</th>
-          <th scope="col">Precio</th>
-          <th scope="col">Stock</th>
-          <th scope="col">Categoría</th>
-          <th scope="col">Imagen</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="postre in postres" v-bind:key="postre.id">          
-          <td>{{ postre.nombre }}</td>
-          <td>{{ postre.precio }}</td>
-          <td>{{ postre.stock }}</td>
-          <td>{{ postre.url }} </td>                    
-          <td>
-            <img v-bind:src="'upload/' + postre.img" class="img-fluid ancho" v-bind:alt="postre.nombre">
-          </td>          
-        </tr>
-      </tbody>
-    </table> 
+      <div class="table-responsive">
+
+        <table class="table mt-3" :items="postres" :fields="fields">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Nombre</th>
+              <th scope="col">Precio</th>
+              <th scope="col">Stock</th>
+              <th scope="col">Categoría</th>
+              <th scope="col">Imagen</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="postre in postres" v-bind:key="postre.id">          
+              <td>{{ postre.nombre }}</td>
+              <td>{{ postre.precio }}</td>
+              <td>{{ postre.stock }}</td>
+              <td>{{ postre.url }} </td>                    
+              <td>
+                <img v-bind:src="'upload/' + postre.img" class="img-fluid ancho" v-bind:alt="postre.nombre">
+              </td>          
+            </tr>
+          </tbody>
+        </table> 
+
+      </div>
 
     </div>
 
